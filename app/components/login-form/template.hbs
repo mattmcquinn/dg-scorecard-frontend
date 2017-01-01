@@ -1,0 +1,28 @@
+{{#unless session.isAuthenticated}}
+  <div id="loginForm">
+    {{#if loginError}}
+      <div class="login-err alert alert-error">Bad deets dude.</div>
+    {{/if}}
+
+    {{input
+      value=identification
+      class="username-field"}}
+    {{input
+      type="password"
+      value=password
+      class="password-field"}}
+    <a
+      href="/login"
+      class="login-btn"
+      {{action "login"}}
+      >
+      Login
+    </a>
+  </div>
+{{else}}
+  <a href="/logout"
+     class="logoutBtn"
+     {{action "signout"}}>
+    logout
+  </a>
+{{/unless}}
