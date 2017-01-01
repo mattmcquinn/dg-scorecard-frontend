@@ -1,7 +1,7 @@
 {{#unless session.isAuthenticated}}
   <div id="loginForm">
     {{#if loginError}}
-      <div class="login-err alert alert-error">Bad deets dude.</div>
+      <div class="login-err alert alert-error">Invalid email/password.</div>
     {{/if}}
 
     {{input
