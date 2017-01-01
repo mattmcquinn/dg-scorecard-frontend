@@ -29,6 +29,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.host = 'http://localhost:3000';
   }
 
   if (environment === 'test') {
@@ -44,6 +45,13 @@ module.exports = function(environment) {
 
   if (environment === 'production') {
 
+  }
+
+  ENV['simple-auth'] = {
+    store: 'simple-auth-session-store:local-storage',
+    authorizer: 'authorizer:jwt',
+    crossOriginWhiteList: ['http://localhost:3000'],
+    routeAfterAuthentication: '/'
   }
 
   return ENV;
