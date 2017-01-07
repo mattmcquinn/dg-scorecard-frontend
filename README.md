@@ -1,7 +1,20 @@
 # dg-scorecard-frontend
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is the frontend for my [disc golf API](https://github.com/mattmcquinn/dg-scorecard)
+Currently a work in progress.
+
+#### What works
+
+* Users can log in and log out
+    * Once logged in, the users' JWT token is sent with subsequent requests
+    * Logging out deletes the JWT from local storage
+* Logged in users can view a list of registered users
+
+#### To-do
+
+* Everything else
+
+----
 
 ## Prerequisites
 
