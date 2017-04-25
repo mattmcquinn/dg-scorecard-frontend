@@ -44,13 +44,13 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.host = 'https://dgscorecard.herokuapp.com';
   }
 
   ENV['simple-auth'] = {
     store: 'simple-auth-session-store:local-storage',
     authorizer: 'authorizer:jwt',
-    crossOriginWhiteList: ['http://localhost:3000'],
+    crossOriginWhiteList: ['http://localhost:3000', 'https://dgscorecard.herokuapp.com'],
     routeAfterAuthentication: '/'
   }
 
