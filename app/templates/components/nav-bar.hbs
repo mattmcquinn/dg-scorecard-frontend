@@ -1,0 +1,32 @@
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      {{#link-to 'index' class='navbar-brand'}}DGScorecard{{/link-to}}
+      </div>
+      {{#if session.isAuthenticated}}
+        <center>
+          <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+              <li>
+                {{#link-to 'users'}}
+                  Users
+                {{/link-to}}
+              </li>
+              <li>
+                {{#link-to 'courses'}}
+                  Courses
+                {{/link-to}}
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <div class="btn-nav">
+                  <a href="#" class="btn btn-danger btn-small navbar-btn" {{action "signout"}}>logout</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </center>
+      {{/if}}
+  </div>
+</div>

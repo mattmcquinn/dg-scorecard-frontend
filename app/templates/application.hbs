@@ -1,33 +1,9 @@
-<div class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
-    <div class="navbar-header">
-      {{#link-to 'index' class='navbar-brand'}}DGScorecard{{/link-to}}
-    </div>
-    <center>
-      <div class="navbar-collapse collapse" id="navbar-main">
-        <ul class="nav navbar-nav">
-          <li>
-            {{#link-to 'users'}}
-            Users
-            {{/link-to}}
-          </li>
-          <li>
-            {{#link-to 'courses'}}
-            Courses
-            {{/link-to}}
-          </li>
-        </ul>
-        <div class="navbar-form navbar-right" role="search">
-          {{login-form}}
-        </div>
-      </div>
-    </center>
-  </div>
-</div>
+{{nav-bar}}
 
 <div class="container">
   {{#each flashMessages.queue as |flash|}}
     {{flash-message flash=flash}}
   {{/each}}
 </div>
+
 {{outlet}}
