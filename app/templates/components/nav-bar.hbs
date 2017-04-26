@@ -1,11 +1,16 @@
-<div class="navbar navbar-default navbar-fixed-top">
-  <div class="container">
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span> 
+      </button>
       {{#link-to 'index' class='navbar-brand'}}DGScorecard{{/link-to}}
       </div>
       {{#if session.isAuthenticated}}
         <center>
-          <div class="navbar-collapse collapse" id="navbar-main">
+          <div class="navbar-collapse collapse" id="myNavbar">
             <ul class="nav navbar-nav">
               <li>
                 {{#link-to 'users'}}
@@ -29,4 +34,4 @@
         </center>
       {{/if}}
   </div>
-</div>
+</nav>
