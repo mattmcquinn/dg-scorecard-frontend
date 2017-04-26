@@ -1,12 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-body {
-  padding-top: 65px;
-}
+body { padding-top: 70px; }
 
 @media (max-width: 979px) {
   body {
-    padding-top: 0px;
+    padding-top: 60px;
   }
 }
 
