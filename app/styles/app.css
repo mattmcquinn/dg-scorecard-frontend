@@ -10,16 +10,6 @@ body {
   }
 }
 
-.full {
-  background: url("images/background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  height:100%;
-}
-
-
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
