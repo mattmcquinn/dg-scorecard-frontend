@@ -1,14 +1,28 @@
-<div class="container m-y-3">
-  <div class="row header">
-    <div class="col-sm-6">
-      <h1>DGScorecard</h1>
+<div class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">DGScorecard</a>
     </div>
-    <div class="col-sm-6">
-      {{login-form}}
-    </div>
+    <center>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav">
+          <li>
+            {{#link-to 'users'}}
+              Users
+            {{/link-to}}
+          </li>
+          <li>
+            {{#link-to 'courses'}}
+              Courses
+            {{/link-to}}
+          </li>
+        </ul>
+        <div class="navbar-form navbar-right" role="search">
+          {{login-form}}
+        </div>
+      </div>
+    </center>
   </div>
 </div>
 
-{{#link-to 'users'}}Users{{/link-to}}
-{{#link-to 'courses'}}Courses{{/link-to}}
 {{outlet}}
