@@ -11,12 +11,12 @@ body {
 }
 
 .full {
-    background: url("images/background.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    height:100%;
+  background: url("images/background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height:100%;
 }
 
 
@@ -46,7 +46,7 @@ body {
   position: relative;
 }
 
-.loginmodal-container input[type=text], input[type=password] {
+.loginmodal-container input[type=text] input[type=password] {
   height: 44px;
   font-size: 16px;
   width: 100%;
@@ -76,8 +76,8 @@ body {
   font-weight: 700;
   height: 36px;
   padding: 0 8px;
-/* border-radius: 3px; */
-/* -webkit-user-select: none;
+  /* border-radius: 3px; */
+  /* -webkit-user-select: none;
   user-select: none; */
 }
 
@@ -85,7 +85,7 @@ body {
   /* border: 1px solid #3079ed; */
   border: 0px;
   color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #4d90fe;
   padding: 17px 0px;
   font-family: roboto;
@@ -109,7 +109,7 @@ body {
   display: inline-block;
   opacity: 0.6;
   transition: opacity ease 0.5s;
-} 
+}
 
 .login-help{
   font-size: 12px;

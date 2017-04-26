@@ -9,13 +9,14 @@ export default Ember.Component.extend({
       const { identification, password } = this.getProperties( 'identification', 'password');
       const s = this.get('session');
       s.authenticate('authenticator:jwt', { identification, password })
-        .then((res) => {
+        .then(() => {
+          this.get('flashMessages').success('Logged in!');
           this.$('.modal').modal('hide');
         })
         .catch(() => {
-        // If login fails, just set an error
-        this.set('loginError', true);
-      });
+          // If login fails, just set an error
+          this.set('loginError', true);
+        });
     },
     signout() {
       this.get('session').invalidate();
