@@ -9,6 +9,8 @@ Currently a work in progress.
     * Once logged in, the users' JWT token is sent with subsequent requests
     * Logging out deletes the JWT from local storage
 * Logged in users can view a list of registered users
+* Logged in users can view a table of all courses in Colorado and Missouri
+  - Table is paginated (client side, for now), and sortable
 
 #### To-do
 
