@@ -8,7 +8,11 @@ export default Ember.Component.extend({
       this.set('loginError', false);
       const { identification, password } = this.getProperties( 'identification', 'password');
       const s = this.get('session');
-      s.authenticate('authenticator:jwt', { identification, password }).catch(() => {
+      s.authenticate('authenticator:jwt', { identification, password })
+        .then(() => {
+          this.get('flashMessages').success('Logged in!');
+        })
+        .catch(() => {
         // If login fails, just set an error
         this.set('loginError', true);
       });
