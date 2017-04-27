@@ -3,6 +3,8 @@
 This is the frontend for my [disc golf API](https://github.com/mattmcquinn/dg-scorecard)
 Currently a work in progress.
 
+[Live demo on Heroku][https://ecaddy.herokuapp.com/]
+
 #### What works
 
 * Users can log in and log out
