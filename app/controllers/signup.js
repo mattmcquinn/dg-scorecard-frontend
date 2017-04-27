@@ -12,7 +12,6 @@ export default Ember.Controller.extend({
         console.log(error);
       })
       .then(() => {
-        console.log('trying to log in');
         this.get('session')
           .authenticate('authenticator:jwt', { identification, password })
           .catch(() => {

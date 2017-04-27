@@ -3,34 +3,26 @@
     <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
     <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
     <p id="profile-name" class="profile-name-card"></p>
-    <form {{action "submit" on="submit"}} class="form-signin">
+    <form {{action 'login' on='submit'}} class="form-signin">
+      <span id="reauth-email" class="reauth-email"></span>
       {{input
-      value=user.name
-      class="form-control"
-      id="inputName"
-      required=true
-      autofocus=true
-      placeholder="Name"}}
-
-      {{input
-      value=user.identification
+      value=identification
       class="form-control"
       id="inputEmail"
       required=true
-      placeholder="Email"}}
+      autofocus=true
+      placeholder="Email address"}}
 
       {{input
-      value=user.password
       type="password"
+      value=password
       class="form-control"
       id="inputPassword"
       required=true
       placeholder="Password"}}
 
-      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Register</button>
-    </form>
-    {{#if errorMessage}}
-      {{errorMessage}}
-    {{/if}}
-  </div><!-- /card-container -->
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Sign in</button>
+      {{#link-to 'signup' class='signup-link'}}Create an account{{/link-to}}
+    </form><!-- /form -->
+    </div><!-- /card-container -->
 </div><!-- /container -->

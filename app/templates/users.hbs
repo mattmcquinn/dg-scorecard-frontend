@@ -1,6 +1,7 @@
 <h1>Users</h1>
-<ul>
-  {{#each model as |user| }}
-    {{user-info user=user}}
-  {{/each}}
-</ul>
+{{#eb-table
+  pageSize=50
+  content=model
+  columns=columns
+  tableStriped=true}}
+{{/eb-table}}
