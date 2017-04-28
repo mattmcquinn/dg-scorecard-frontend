@@ -5,7 +5,6 @@ export default Ember.Component.extend({
   actions: {
     login() {
       // reset login error on each attempt
-      this.set('loginError', false);
       const { identification, password } = this.getProperties( 'identification', 'password');
       const s = this.get('session');
       s.authenticate('authenticator:jwt', { identification, password })
@@ -13,8 +12,7 @@ export default Ember.Component.extend({
           this.get('flashMessages').success('Logged in!');
         })
         .catch(() => {
-          // If login fails, just set an error
-          this.set('loginError', true);
+          this.get('flashMessages').warning('Invalid username or password');
         });
     },
     signout() {
