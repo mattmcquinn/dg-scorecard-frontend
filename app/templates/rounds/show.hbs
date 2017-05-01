@@ -1,0 +1,9 @@
+<h3>Round {{model.id}}</h3>
+
+<div class="form-group">
+{{#each model.scores as |score|}}
+  {{score.hole.number}}
+  {{score.strokes}}<br>
+{{/each}}
+</div>
+

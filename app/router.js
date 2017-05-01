@@ -11,6 +11,11 @@ Router.map(function() {
   this.route('courses');
   this.route('signup');
   this.route('login');
+  this.route('rounds', function() {
+    this.route('show', {
+      path: ':id'
+    });
+  });
 });
 
 export default Router;

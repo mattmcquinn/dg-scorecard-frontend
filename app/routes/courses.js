@@ -4,6 +4,5 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model() {
     return this.store.query('course', { 'filter[state]': 'MO,CO' });
-    // return this.store.findAll('course');
   }
 });
