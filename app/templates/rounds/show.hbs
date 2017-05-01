@@ -1,9 +1,11 @@
-<h3>Round {{model.id}}</h3>
-
+<div class="round-title">
+  <h3>Round {{model.id}}</h3>
+  <p>{{model.score}}</p>
+</div>
 <div class="form-group">
-{{#each model.scores as |score|}}
-  {{score.hole.number}}
-  {{score.strokes}}<br>
-{{/each}}
+  {{#each model.scores as |score|}}
+    {{score.hole.number}}
+    {{score.strokes}}<br>
+  {{/each}}
 </div>
 

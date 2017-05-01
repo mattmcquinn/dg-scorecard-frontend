@@ -6,8 +6,8 @@
       {{#each model as |item|}}
       <li class="list-group-item">
         {{#link-to 'rounds.show' item}}
-        {{item.id}}
-        {{/link-to}}
+          ({{item.score}}) by {{item.user.name}} at {{item.course.name}}
+      {{/link-to}}
       </li>
       {{/each}}
     </ul>
