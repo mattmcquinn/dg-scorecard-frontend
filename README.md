@@ -8,11 +8,15 @@ Currently a work in progress.
 #### What works
 
 * Users can log in and log out
-    * Once logged in, the users' JWT token is sent with subsequent requests
-    * Logging out deletes the JWT from local storage
-* Logged in users can view a list of registered users
-* Logged in users can view a table of all courses in Colorado and Missouri
-  - Table is paginated (client side, for now), and sortable
+    * once logged in, the users' JWT token is sent with subsequent requests
+    * logging out deletes the JWT from local storage
+* Logged in users can:
+  - view a list of registered users
+  - view a table of all courses in Colorado and Missouri
+    - table is paginated (client side, for now), and sortable
+  - view a list of all rounds
+    - view the scores for an individual round
+* Guest users are redirected to the login page
 
 #### To-do
 
