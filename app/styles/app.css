@@ -1,13 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
-body { padding-top: 70px; }
-
-@media (max-width: 979px) {
-  body {
-    padding-top: 60px;
-  }
-}
-
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
@@ -279,10 +271,4 @@ body { padding-top: 70px; }
   text-align: left;
   padding-left: 1em;
   border-width: 0;
-}
-
-@media screen and (min-width: 80em) {
-  .front9 {
-    display: inline-block;
-  }
 }
