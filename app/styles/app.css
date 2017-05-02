@@ -244,3 +244,45 @@ body { padding-top: 70px; }
 .round-title p {
   display: inline;
 }
+
+.round {
+  margin-bottom: 1em;
+}
+.round .hole {
+  background-color: #f63;
+  color: #fff;
+}
+.round .hole span {
+  padding: .5em 0;
+}
+.round .par {
+  background-color: #ccc;
+  color: #777;
+}
+.round .par span {
+  padding: .25em 0;
+}
+.round .score {
+  color: #f63;
+}
+.round .score span {
+  padding: .75em 0;
+}
+.round span {
+  border: rgba(0, 0, 0, 0.25) solid 1px;
+  border-width: 0 0 0 1px;
+  display: inline-block;
+  text-align: center;
+  width: 3em;
+}
+.round span:first-child {
+  text-align: left;
+  padding-left: 1em;
+  border-width: 0;
+}
+
+@media screen and (min-width: 80em) {
+  .front9 {
+    display: inline-block;
+  }
+}

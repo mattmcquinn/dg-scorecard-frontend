@@ -1,11 +1,23 @@
-<div class="round-title">
-  <h3>Round {{model.id}}</h3>
-  <p>{{model.score}}</p>
-</div>
-<div class="form-group">
-  {{#each model.scores as |score|}}
-    {{score.hole.number}}
-    {{score.strokes}}<br>
-  {{/each}}
-</div>
-
+<article class="round">
+    <div class="hole">
+        <span>Hole</span>
+        {{#each model.scores as |score|}}
+          <span>{{score.hole.number}}</span>
+        {{/each}}
+        <span>+/-</span>
+    </div>
+    <div class="par">
+        <span>Par</span>
+        {{#each model.scores as |score|}}
+          <span>{{score.hole.par}}</span>
+        {{/each}}
+        <span>{{model.totalPar}}</span>
+    </div>
+    <div class="score">
+        <span>Score</span>
+        {{#each model.scores as |score|}}
+          <span>{{score.strokes}}</span>
+        {{/each}}
+        <span class="total">{{model.score}}</span>
+    </div>
+</article>
