@@ -8,22 +8,26 @@
       {{#nav.item}}
         {{#nav.link-to "index"}}Home{{/nav.link-to}}
       {{/nav.item}}
-      {{#nav.item}}
-        {{#nav.link-to "users"}}Users{{/nav.link-to}}
-      {{/nav.item}}
-      {{#nav.item}}
-        {{#nav.link-to "courses"}}Courses{{/nav.link-to}}
-      {{/nav.item}}
-      {{#nav.item}}
-        {{#nav.link-to "rounds"}}Rounds{{/nav.link-to}}
-      {{/nav.item}}
+      {{#if session.isAuthenticated}}
+        {{#nav.item}}
+          {{#nav.link-to "users"}}Users{{/nav.link-to}}
+        {{/nav.item}}
+        {{#nav.item}}
+          {{#nav.link-to "courses"}}Courses{{/nav.link-to}}
+        {{/nav.item}}
+        {{#nav.item}}
+          {{#nav.link-to "rounds"}}Rounds{{/nav.link-to}}
+        {{/nav.item}}
+      {{/if}}
     {{/navbar.nav}}
-    <ul class="nav navbar-nav navbar-right">
-     <li>
-       <div class="btn-nav">
-         <a href="#" class="btn btn-danger btn-small navbar-btn" {{action "signout"}}>logout</a>
-       </div>
-     </li>
-   </ul>
+    {{#if session.isAuthenticated}}
+      <ul class="nav navbar-nav navbar-right">
+      <li>
+        <div class="btn-nav">
+          <a href="#" class="btn btn-danger btn-small navbar-btn" {{action "signout"}}>logout</a>
+        </div>
+      </li>
+    </ul>
+  {{/if}}
    {{/navbar.content}}
 {{/bs-navbar}}
