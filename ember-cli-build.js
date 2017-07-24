@@ -7,10 +7,11 @@ module.exports = function(defaults) {
     'ember-bootstrap': {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
-      'importBootstrapCSS': true
+      'importBootstrapCSS': false
     }
   });
 
   app.import('bower_components/ember/ember-template-compiler.js');
+  app.import('bower_components/bootstrap/dist/css/bootstrap.min.css')
   return app.toTree();
 };

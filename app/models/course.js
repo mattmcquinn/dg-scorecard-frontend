@@ -1,3 +1,4 @@
+import Ember from 'ember';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
@@ -7,5 +8,11 @@ export default DS.Model.extend({
   state: DS.attr('string'),
   basket_type: DS.attr('string'),
   tee_type: DS.attr('string'),
-  holes: DS.hasMany('hole')
+  holes: DS.hasMany('hole'),
+
+  totalPar: Ember.computed('holes.@each.par', function() {
+    return this.get('holes').reduce(function(acc, value) {
+      return acc + value.get('par');
+    }, 0);
+  })
 });
