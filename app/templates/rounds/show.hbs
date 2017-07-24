@@ -1,21 +1,25 @@
-<table class="table table-striped">
-  <tbody>
-    <tr>
-      <th>Hole</th>
-      <th>Score</th>
-      <th>Par</th>
-    </tr>
-    {{#each model.scores as |score|}}
+<div class="table-responsive">
+  <table class="table table-striped table-condensed">
+    <thead>
       <tr>
-        <td>{{score.hole.number}}</td>  
-        <td>{{score.strokes}}</td>  
-        <td>{{score.hole.par}}</td>  
+        <th>Hole</th>
+        <th>Score</th>
+        <th>Par</th>
       </tr>
-    {{/each}}
-    <tr>
-      <td>Total</td>
-      <td>{{model.score}}</td>
-      <td>{{model.course.totalPar}}</td>
-    </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      {{#each model.scores as |score|}}
+      <tr>
+        <td>{{score.hole.number}}</td>
+        <td>{{score.strokes}}</td>
+        <td>{{score.hole.par}}</td>
+      </tr>
+      {{/each}}
+      <tr class="info">
+        <td>Total</td>
+        <td>{{model.score}}</td>
+        <td>{{model.course.totalPar}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

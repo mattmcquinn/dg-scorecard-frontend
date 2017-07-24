@@ -1,19 +1,21 @@
 <h1>Rounds</h1>
 
-<div class="row">
-  <div class="col-sm-4">
-    <ul class="list-group">
-      {{#each model as |item|}}
-      <li class="list-group-item">
-        {{#link-to 'rounds.show' item}}
-          ({{item.score}}) by {{item.user.name}} at {{item.course.name}}
-      {{/link-to}}
-      </li>
-      {{/each}}
-    </ul>
-  </div>
-</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-4">
+      <ul class="list-group">
+        {{#each model as |item|}}
+          <li class="list-group-item">
+            {{#link-to 'rounds.show' item}}
+              ({{item.score}}) by {{item.user.name}} at {{item.course.name}}
+            {{/link-to}}
+          </li>
+        {{/each}}
+      </ul>
+    </div>
 
-<div class="col-sm-8">
-  {{outlet}}
+    <div class="col-xs-8">
+      {{outlet}}
+    </div>
+  </div>
 </div>
