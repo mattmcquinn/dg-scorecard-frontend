@@ -1,0 +1,8 @@
+<ul class="list-group-item">
+  {{#each sortedHoles as |hole|}}
+    <li class="list-group-item hole">
+      {{hole.number}}
+      <span class="par pull-right">{{hole.par}}</span>
+    </li>
+  {{/each}}
+</ul>

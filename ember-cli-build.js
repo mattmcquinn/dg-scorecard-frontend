@@ -11,7 +11,5 @@ module.exports = function(defaults) {
     }
   });
 
-  app.import('bower_components/ember/ember-template-compiler.js');
-  app.import('bower_components/bootstrap/dist/css/bootstrap.min.css')
   return app.toTree();
 };

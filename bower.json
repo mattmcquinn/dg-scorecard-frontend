@@ -1,10 +1,1 @@
-{
-  "name": "dg-scorecard-frontend",
-  "dependencies": {
-    "ember": "2.14.0",
-    "ember-cli-shims": "0.1.3"
-  },
-  "devDependencies": {
-    "bootstrap": "^3.3.7"
-  }
-}
+{"name":"dg-scorecard-frontend","dependencies":{"ember":"2.14.0","ember-cli-shims":"0.1.3"},"devDependencies":{"bootstrap":"^3.3.7"}}

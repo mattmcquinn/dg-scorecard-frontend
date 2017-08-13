@@ -8,7 +8,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('users');
-  this.route('courses');
+  this.route('courses', function() {
+    this.route('course', { path: ':id' }, function() {
+      this.route('holes');
+    });
+  });
   this.route('signup');
   this.route('login');
   this.route('rounds', function() {
