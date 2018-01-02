@@ -3,6 +3,6 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model() {
-    return this.store.query('round', { 'include': 'user,course,scores,scores.hole'});
+    return this.store.query('round', { 'include': 'user,course,course.holes,scores,scores.hole'});
   }
 });
