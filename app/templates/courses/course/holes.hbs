@@ -1,0 +1,20 @@
+<ul class="list-group-item">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Distance</th>
+        <th scope="col">Par</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each sortedHoles as |hole|}}
+      <tr>
+        <td>{{hole.number}}</td>
+        <td>{{hole.distance}}</td>
+        <td>{{hole.par}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</ul>

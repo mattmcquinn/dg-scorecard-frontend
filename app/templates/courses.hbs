@@ -1,7 +1,16 @@
-<h1>Courses</h1>
-{{#eb-table
-  pageSize=50
-  content=model
-  columns=columns
-  tableStriped=true}}
-{{/eb-table}}
+<div class="col-md-4">
+  <div class="list-group">
+    {{#each model as |course|}}
+      {{#link-to "courses.course.holes" course class="course-link list-group-item"}}
+        {{course.name}}
+        <span class="pointer glyphicon glyphicon-chevron-right"></span>
+      {{/link-to}}
+    {{/each}}
+    <div class="list-group-item">
+      {{paginate-collection totalPages=totalPages currentPage=number setCurrentPage=(action "setCurrentPage")}}
+    </div>
+  </div>
+</div>
+<div class="col-md-8">
+  {{outlet}}
+</div>

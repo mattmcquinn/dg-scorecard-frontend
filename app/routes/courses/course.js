@@ -2,7 +2,7 @@ import Ember from 'ember';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  model() {
-    return this.store.query('round', { 'include': 'user,course,course.holes,scores,scores.hole'});
+  model: function(params) {
+    return this.store.findRecord('course', params.id);
   }
 });

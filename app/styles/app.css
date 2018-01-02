@@ -272,3 +272,23 @@
   padding-left: 1em;
   border-width: 0;
 }
+
+.empty-list {
+  min-height: 100px;
+  text-align: center;
+}
+
+.empty-list .empty-message {
+  display: inline-block;
+  color: #555;
+  line-height: 100px;
+}
+
+.course-link .pointer {
+  float: right;
+  display: none;
+}
+
+.course-link.active .pointer {
+  display: block;
+}
