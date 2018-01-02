@@ -6,6 +6,9 @@
         <span class="pointer glyphicon glyphicon-chevron-right"></span>
       {{/link-to}}
     {{/each}}
+    <div class="list-group-item">
+      {{paginate-collection totalPages=totalPages currentPage=number setCurrentPage=(action "setCurrentPage")}}
+    </div>
   </div>
 </div>
 <div class="col-md-8">
