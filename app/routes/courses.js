@@ -9,14 +9,14 @@ export default Ember.Route.extend(Pagination, AuthenticatedRouteMixin, {
   },
 
   model(params) {
-    if (params.state && params.state != 'All' && params.name)
+    if (params.state && params.state !== 'All' && params.name)
     {
       return this.queryPaginated('course', {
         filter: { state: params.state, name: params.name},
         number: params.number
       });
     }
-    else if (params.state && params.state != 'All')
+    else if (params.state && params.state !== 'All')
     {
       return this.queryPaginated('course', {
         filter: { state: params.state },
