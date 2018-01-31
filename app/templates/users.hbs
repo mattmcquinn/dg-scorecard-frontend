@@ -1,8 +1,35 @@
-<h2>{{currentUser.user.name}}</h2>
-<h1>Users</h1>
-{{#eb-table
-  pageSize=50
-  content=model
-  columns=columns
-  tableStriped=true}}
-{{/eb-table}}
+<div class="container-fluid">
+  <h1>Users</h1>
+  <h4>Your name is: {{currentUser.user.name}}</h4>
+  {{#paper-data-table sortProp="name" sortDir="desc" selectable=true as |table|}}
+    {{#table.head as |head|}}
+      {{#head.column sortProp="name"}}Name{{/head.column}}
+      {{#head.column sortProp="email" }}Email{{/head.column}}
+    {{/table.head}}
+    {{#table.body as |body|}}
+      {{#each model as |user|}}
+        {{#body.row edit=true as |row|}}
+          {{#if (is-equal user currentUser.user)}}
+            {{#row.cell edit=true as |cell|}}
+              {{#if cell.showEdit}}
+                {{#cell.edit-dialog onClose=cell.toggleEdit}}
+                  {{paper-input value=user.name onChange=(action "changeUserName")}}
+                {{/cell.edit-dialog}}
+              {{else}}
+                {{user.name}}
+                {{#paper-button iconButton=true onClick=row.toggleEdit}}
+                  {{paper-icon 'edit'}}
+                {{/paper-button}}
+              {{/if}}
+            {{/row.cell}}
+          {{else}}
+            {{#row.cell as |cell|}}
+              {{user.name}}
+            {{/row.cell}}
+          {{/if}}
+          {{#row.cell}}{{user.email}}{{/row.cell}}
+        {{/body.row}}
+      {{/each}}
+    {{/table.body}}
+  {{/paper-data-table}}
+</div>

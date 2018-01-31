@@ -1,5 +1,16 @@
+<div class="col-md-8">
+  {{outlet}}
+</div>
 <div class="col-md-4">
   <div class="list-group">
+    <div class="list-group-item">
+      {{#power-select allowClear=true selected=state options=states onchange=(action "selectState") as |selectedState|}} 
+        {{selectedState}}
+      {{/power-select}}
+    </div>
+    <div class="list-group-item">
+      {{input value=name placeholder="Filter by course name"}}
+    </div>
     {{#each model as |course|}}
       {{#link-to "courses.course.holes" course class="course-link list-group-item"}}
         {{course.name}}
@@ -11,6 +22,4 @@
     </div>
   </div>
 </div>
-<div class="col-md-8">
-  {{outlet}}
-</div>
+
