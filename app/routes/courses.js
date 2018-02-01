@@ -5,16 +5,38 @@ import Pagination from 'ember-cli-jsonapi-pagination/mixins/routes/jsonapi-pagin
 export default Ember.Route.extend(Pagination, AuthenticatedRouteMixin, {
   queryParams: {
     state: { refreshModel: true },
+    city: { refreshModel: true },
     name: {refreshModel: true }
   },
 
   model(params) {
-    if (params.state && params.state !== 'All' && params.name)
+    if (params.state && params.state !== 'All' && params.name && params.city)
     {
       return this.queryPaginated('course', {
-        filter: { state: params.state, name: params.name},
+        filter: { state: params.state, name: params.name, city: params.city},
         number: params.number
       });
+    }
+    else if (params.state && params.state !== 'All' && params.name)
+    {
+      return this.queryPaginated('course', {
+              filter: { state: params.state, name: params.name},
+              number: params.number
+            });
+    }
+    else if (params.state && params.state !== 'All' && params.city)
+    {
+      return this.queryPaginated('course', {
+              filter: { state: params.state, city: params.city},
+              number: params.number
+            });
+    }
+    else if (params.name && params.city)
+    {
+      return this.queryPaginated('course', {
+              filter: { name: params.name, city: params.city},
+              number: params.number
+            });
     }
     else if (params.state && params.state !== 'All')
     {
@@ -27,6 +49,13 @@ export default Ember.Route.extend(Pagination, AuthenticatedRouteMixin, {
     {
       return this.queryPaginated('course', {
         filter: { name: params.name },
+        number: params.number
+      });
+    }
+    else if (params.city)
+    {
+      return this.queryPaginated('course', {
+        filter: { city: params.city},
         number: params.number
       });
     }

@@ -10,6 +10,7 @@
     </div>
     <div class="list-group-item">
       {{input value=name placeholder="Filter by course name"}}
+      {{input value=city placeholder="Filter by city"}}
     </div>
     {{#each model as |course|}}
       {{#link-to "courses.course.holes" course class="course-link list-group-item"}}
