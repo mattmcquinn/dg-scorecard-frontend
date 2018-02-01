@@ -14,7 +14,7 @@
     </div>
     {{#each model as |course|}}
       {{#link-to "courses.course.holes" course class="course-link list-group-item"}}
-        {{course.name}}
+        {{course.name}} <small>({{course.city}},{{course.state}})</small>
         <span class="pointer glyphicon glyphicon-chevron-right"></span>
       {{/link-to}}
     {{/each}}
