@@ -1,7 +1,30 @@
-<div class="list-group">
-  <div class="list-group-item empty-list">
-    <div class="empty-message">
-      Select a course.
+<div class="container-fluid">
+  <h2>List</h2>
+
+  <div class="row">
+    <div class="col-md-2">
+      <div class="form-group">
+        {{#power-select allowClear=true selected=state options=states onchange=(action "selectState") as |selectedState|}} 
+          {{selectedState}}
+        {{/power-select}}
+      </div>
     </div>
+  </div>
+  <div class="row">
+    {{#each model as |course|}}
+      <div class="col-sm-2">
+        <div class="card" style="">
+          <div class="card-body">
+            <h5 class="card-title">{{course.name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{course.city}},{{course.state}}</h6>
+            <p class="card-text">{{course.num_holes}} holes</p>
+            {{#link-to 'courses.view' course.id class="card-link"}}View course{{/link-to}}
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div>
+    {{paginate-collection totalPages=totalPages currentPage=number setCurrentPage=(action "setCurrentPage")}}
   </div>
 </div>
