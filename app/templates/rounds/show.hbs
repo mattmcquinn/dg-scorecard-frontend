@@ -11,7 +11,7 @@
       {{#each model.scores as |score|}}
       <tr>
         <td>{{score.hole.number}}</td>
-        <td>{{score.strokes}}</td>
+        <td>{{input value=score.strokes onChange=(action (mut score.strokes))}}</td>
         <td>{{score.hole.par}}</td>
       </tr>
       {{/each}}

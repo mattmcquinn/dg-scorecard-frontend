@@ -14,6 +14,14 @@ export default DS.Model.extend({
   }),
 
   score: Ember.computed('totalStrokes', 'course.totalPar', function() {
-    return this.get('totalStrokes') - this.get('course.totalPar');
+    let diff = this.get('totalStrokes') - this.get('course.totalPar');
+    if (diff === 0)
+    {
+      return "Par";
+    }
+    else
+    {
+      return diff;
+    }
   })
 });

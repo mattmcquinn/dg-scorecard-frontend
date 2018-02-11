@@ -16,9 +16,16 @@ export default Ember.Route.extend(Pagination, AuthenticatedRouteMixin, {
     return this.get('geolocation').getLocation().then(function(geoObject) {
       let currentLocation = that.get('geolocation').get('currentLocation');
       let latlng = currentLocation[0].toString() + "," + currentLocation[1].toString();
-      return that.queryPaginated('course', { filter: { latlng:latlng },
-        number:  params.number 
-      });
+      if (params.state)
+      {
+        return that.queryPaginated('course', params);
+      }
+      else
+      {
+        return that.queryPaginated('course', { filter: { latlng:latlng },
+          number:  params.number 
+        });
+      }
     }, function() {
       return that.queryPaginated('course', params);
     });

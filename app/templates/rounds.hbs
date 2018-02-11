@@ -1,21 +1,77 @@
 <h1>Rounds</h1>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-xs-4">
-      <ul class="list-group">
-        {{#each model as |item|}}
-          <li class="list-group-item">
-            {{#link-to 'rounds.show' item}}
-              ({{item.score}}) by {{item.user.name}} at {{item.course.name}}
-            {{/link-to}}
-          </li>
-        {{/each}}
-      </ul>
-    </div>
+{{!-- <div class="container-fluid"> --}}
+{{!--   <div class="row"> --}}
+{{!--     <div class="col-xs-4"> --}}
+{{!--       <ul class="list-group"> --}}
+{{!--         {{#each model as |item|}} --}}
+{{!--           <li class="list-group-item"> --}}
+{{!--             {{#link-to 'rounds.show' item}} --}}
+{{!--               ({{item.score}}) by {{item.user.name}} at {{item.course.name}} --}}
+{{!--             {{/link-to}} --}}
+{{!--           </li> --}}
+{{!--         {{/each}} --}}
+{{!--       </ul> --}}
+{{!--     </div> --}}
 
-    <div class="col-xs-8">
-      {{outlet}}
+{{!--     <div class="col-xs-8"> --}}
+{{!--       {{outlet}} --}}
+{{!--     </div> --}}
+{{!--   </div> --}}
+{{!-- </div> --}}
+
+<div class="container">
+  {{#each model as |round|}}
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card">
+          <div class="card-block">
+            <h3 class="card-title">{{round.score}} <span class="pull-right">{{round.course.name}}</span></h3>
+          </div>
+          <div class="card-block">
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>F</th>
+                  <th>+/-</th>
+                  {{#each round.scores as |score|}}
+                    <th>{{score.hole.number}}</th>
+                  {{/each}}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{round.user.name}}</td>
+                  <td>{{round.totalStrokes}}</td>
+                  <td>{{round.score}}</td>
+                  {{#each round.scores as |score|}}
+                    <td>{{score.strokes}}</td>
+                  {{/each}}
+                </tr>
+                <tr>
+                  <td>Distance</td>
+                  <td></td>
+                  <td></td>
+                  {{#each round.scores as |score|}}
+                    <td>{{score.hole.distance}}</td>
+                  {{/each}}
+                </tr>
+                <tr>
+                  <td>Par</td>
+                  <td></td>
+                  <td></td>
+                  {{#each round.scores as |score|}}
+                    <td>{{score.hole.par}}</td>
+                  {{/each}}
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </div>
+      </div> 
     </div>
-  </div>
+  {{/each}}
 </div>

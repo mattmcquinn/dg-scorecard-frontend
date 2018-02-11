@@ -2,6 +2,7 @@
   <div class="row">
     <div class="col-md-4">
       {{#link-to 'courses.index' class="btn btn-primary"}}List all{{/link-to}}
+      <button class="btn btn-primary" {{action "startRound" model}}>Start Round</button>
     </div>
   </div>
   {{model.name}}
