@@ -36,7 +36,7 @@
                   <th></th>
                   <th>F</th>
                   <th>+/-</th>
-                  {{#each round.scores as |score|}}
+                  {{#each round.sortedScores as |score|}}
                     <th>{{score.hole.number}}</th>
                   {{/each}}
                 </tr>
@@ -46,7 +46,7 @@
                   <td>{{round.user.name}}</td>
                   <td>{{round.totalStrokes}}</td>
                   <td>{{round.score}}</td>
-                  {{#each round.scores as |score|}}
+                  {{#each round.sortedScores as |score|}}
                     <td>{{score.strokes}}</td>
                   {{/each}}
                 </tr>
@@ -54,7 +54,7 @@
                   <td>Distance</td>
                   <td></td>
                   <td></td>
-                  {{#each round.scores as |score|}}
+                  {{#each round.sortedScores as |score|}}
                     <td>{{score.hole.distance}}</td>
                   {{/each}}
                 </tr>
@@ -62,7 +62,7 @@
                   <td>Par</td>
                   <td></td>
                   <td></td>
-                  {{#each round.scores as |score|}}
+                  {{#each round.sortedScores as |score|}}
                     <td>{{score.hole.par}}</td>
                   {{/each}}
                 </tr>

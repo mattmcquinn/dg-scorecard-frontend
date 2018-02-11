@@ -23,5 +23,9 @@ export default DS.Model.extend({
     {
       return diff;
     }
-  })
+  }),
+
+  sortProperties: ['hole.number:asc'],
+  sortedScores: Ember.computed.sort('scores', 'sortProperties')
+
 });
