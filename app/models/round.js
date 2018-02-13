@@ -6,6 +6,7 @@ export default DS.Model.extend({
   user: DS.belongsTo('user'),
   course: DS.belongsTo('course'),
   scores: DS.hasMany('scores'),
+  updatedAt: DS.attr('date'),
 
   totalStrokes: Ember.computed('scores.@each.strokes', function() {
     return this.get('scores').reduce(function(acc, value) {

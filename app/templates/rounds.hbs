@@ -1,36 +1,19 @@
 <h1>Rounds</h1>
 
-{{!-- <div class="container-fluid"> --}}
-{{!--   <div class="row"> --}}
-{{!--     <div class="col-xs-4"> --}}
-{{!--       <ul class="list-group"> --}}
-{{!--         {{#each model as |item|}} --}}
-{{!--           <li class="list-group-item"> --}}
-{{!--             {{#link-to 'rounds.show' item}} --}}
-{{!--               ({{item.score}}) by {{item.user.name}} at {{item.course.name}} --}}
-{{!--             {{/link-to}} --}}
-{{!--           </li> --}}
-{{!--         {{/each}} --}}
-{{!--       </ul> --}}
-{{!--     </div> --}}
-
-{{!--     <div class="col-xs-8"> --}}
-{{!--       {{outlet}} --}}
-{{!--     </div> --}}
-{{!--   </div> --}}
-{{!-- </div> --}}
-
 <div class="container">
-  {{#each model as |round|}}
+  {{#each sortedModel as |round|}}
     <div class="row">
       <div class="col-sm-6">
         <div class="card">
           <div class="card-block">
-            <h3 class="card-title">{{round.score}} <span class="pull-right">{{round.course.name}}</span></h3>
+            <h3 class="card-title">{{round.score}} <small>{{#link-to
+                  'courses.view' round.course.id
+                  class="card-link"}}{{round.course.name}}{{/link-to}}</small><span
+                  class="pull-right"><small>{{moment-format round.updatedAt 'MMMM DD, YYYY'}}</small></span></h3>
           </div>
           <div class="card-block">
           <div class="table-responsive">
-            <table class="table">
+            <table class="table table-bordered">
               <thead>
                 <tr>
                   <th></th>
