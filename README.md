@@ -11,11 +11,15 @@ Currently a work in progress.
     * once logged in, the users' JWT token is sent with subsequent requests
     * logging out deletes the JWT from local storage
 * Logged in users can:
-  - view a list of registered users
-  - view a table of all courses in Colorado and Missouri
-    - table is paginated (client side, for now), and sortable
-  - view a list of all rounds
-    - view the scores for an individual round
+  - view a list of courses near them (using geolocation)
+    - table is paginated (server side)
+  - view details on a course
+    - distance and par for each hole
+  - start a round from the course page
+  - view a list of their own rounds
+  - view the scores for an individual round in a table
+  - create a new round by first selecting a course
+  - edit an existing round
 * Guest users are redirected to the login page
 
 #### To-do
