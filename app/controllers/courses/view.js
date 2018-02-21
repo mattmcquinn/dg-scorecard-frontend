@@ -15,7 +15,7 @@ export default Ember.Controller.extend({
 
       let self = this;
       round.save().then(function(round) {
-        self.transitionToRoute('rounds.show', round);
+        self.transitionToRoute('rounds.edit', round);
       });
 
     }

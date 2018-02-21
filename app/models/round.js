@@ -9,9 +9,14 @@ export default DS.Model.extend({
   updatedAt: DS.attr('date'),
 
   totalStrokes: Ember.computed('scores.@each.strokes', function() {
-    return this.get('scores').reduce(function(acc, value) {
-      return acc + value.get('strokes');
-    }, 0);
+    let sum = 0;
+    this.get('scores').forEach(score => {
+      let strokes = parseInt(score.get('strokes'));
+      if (!isNaN(strokes)) { 
+         sum += strokes;
+      }
+    });
+    return sum;
   }),
 
   score: Ember.computed('totalStrokes', 'course.totalPar', function() {

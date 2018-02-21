@@ -14,9 +14,8 @@ Router.map(function() {
   this.route('signup');
   this.route('login');
   this.route('rounds', function() {
-    this.route('show', {
-      path: ':id'
-    });
+    this.route('show', { path: '/:id/show' });
+    this.route('edit', { path: '/:id/edit' });
   });
 });
 

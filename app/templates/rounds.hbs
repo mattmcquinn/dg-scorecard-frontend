@@ -1,60 +1,6 @@
-<h1>Rounds</h1>
-
-<div class="container">
-  {{#each sortedModel as |round|}}
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="card">
-          <div class="card-block">
-            <h3 class="card-title">{{round.score}} <small>{{#link-to
-                  'courses.view' round.course.id
-                  class="card-link"}}{{round.course.name}}{{/link-to}}</small><span
-                  class="pull-right"><small>{{moment-format round.updatedAt 'MMMM DD, YYYY'}}</small></span></h3>
-          </div>
-          <div class="card-block">
-          <div class="table-responsive">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th>F</th>
-                  <th>+/-</th>
-                  {{#each round.sortedScores as |score|}}
-                    <th>{{score.hole.number}}</th>
-                  {{/each}}
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{{round.user.name}}</td>
-                  <td>{{round.totalStrokes}}</td>
-                  <td>{{round.score}}</td>
-                  {{#each round.sortedScores as |score|}}
-                    <td>{{score.strokes}}</td>
-                  {{/each}}
-                </tr>
-                <tr>
-                  <td>Distance</td>
-                  <td></td>
-                  <td></td>
-                  {{#each round.sortedScores as |score|}}
-                    <td>{{score.hole.distance}}</td>
-                  {{/each}}
-                </tr>
-                <tr>
-                  <td>Par</td>
-                  <td></td>
-                  <td></td>
-                  {{#each round.sortedScores as |score|}}
-                    <td>{{score.hole.par}}</td>
-                  {{/each}}
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          </div>
-        </div>
-      </div> 
-    </div>
-  {{/each}}
+<div class="container-fluid">
+  <h1>Rounds</h1>
 </div>
+
+{{outlet}}
+
